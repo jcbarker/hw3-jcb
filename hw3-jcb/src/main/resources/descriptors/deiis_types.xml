@@ -92,7 +92,7 @@
         <featureDescription>
           <name>answerScores</name>
           <description>The answer scores.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
           <elementType>edu.cmu.deiis.types.AnswerScore</elementType>
         </featureDescription>
         <featureDescription>

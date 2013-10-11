@@ -9,9 +9,11 @@ import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.cas.FSArray;
 
 import edu.cmu.deiis.types.AnswerScore;
 import edu.cmu.deiis.types.Question;
+import edu.cmu.deiis.types.Results;
 
 /**
  * This class ranks the answers according to correctness and calculates precision.
@@ -48,16 +50,31 @@ public class Evaluation extends JCasAnnotator_ImplBase {
       }
     }
     
-    // Output results
+    // Output results    
     FSIndex questionIndex = aJCas.getAnnotationIndex(Question.type);
     FSIterator questionIter = questionIndex.iterator();
     Question question = (Question) questionIter.next();
-    System.out.println("Question: "+question.getCoveredText());
+
+    FSArray asArray = new FSArray(aJCas, scores.size());
+
+    int i = 0;
     for (AnswerScore as: scores){
-      String symbol = as.getAnswer().getIsCorrect()?"+":"-";
-      System.out.printf("%s %.2f %s\n", symbol, as.getScore(), as.getCoveredText());
+      asArray.set(i, as);
+      i++;
     }
-    System.out.printf("Precision at %d: %.2f\n", totalCorrect, 1.0*correct/totalCorrect);
+
+    
+    Double precision = 1.0*correct/totalCorrect;
+    
+    Results results =  new Results(aJCas);
+    results.setAnswerScores(asArray);
+    results.setQuestion(question);
+    results.setPrecision(precision);
+    results.setBegin(question.getBegin());
+    results.setEnd(question.getEnd());
+    results.setCasProcessorId("Evaluation");
+    results.setConfidence(1.0);
+    results.addToIndexes();
   }
 
   private Comparator<AnswerScore> AnswerScoreComparator = new Comparator<AnswerScore>() {

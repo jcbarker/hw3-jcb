@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** This holds the results of an evalution of a question's answers.
- * Updated by JCasGen Mon Oct 07 23:23:12 EDT 2013
+ * Updated by JCasGen Tue Oct 08 00:08:33 EDT 2013
  * @generated */
 public class Results_Type extends Annotation_Type {
   /** @generated */
@@ -77,7 +77,26 @@ public class Results_Type extends Annotation_Type {
       jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
     ll_cas.ll_setRefValue(addr, casFeatCode_answerScores, v);}
     
-  
+   /** @generated */
+  public int getAnswerScores(int addr, int i) {
+        if (featOkTst && casFeat_answerScores == null)
+      jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i);
+  }
+   
+  /** @generated */ 
+  public void setAnswerScores(int addr, int i, int v) {
+        if (featOkTst && casFeat_answerScores == null)
+      jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_answerScores), i, v);
+  }
+ 
  
   /** @generated */
   final Feature casFeat_precision;
@@ -110,7 +129,7 @@ public class Results_Type extends Annotation_Type {
     casFeatCode_question  = (null == casFeat_question) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_question).getCode();
 
  
-    casFeat_answerScores = jcas.getRequiredFeatureDE(casType, "answerScores", "uima.cas.FSList", featOkTst);
+    casFeat_answerScores = jcas.getRequiredFeatureDE(casType, "answerScores", "uima.cas.FSArray", featOkTst);
     casFeatCode_answerScores  = (null == casFeat_answerScores) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_answerScores).getCode();
 
  

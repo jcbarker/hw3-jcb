@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Mon Oct 07 23:23:12 EDT 2013
+ * Updated by JCasGen Tue Oct 08 00:08:33 EDT 2013
  * XML source: /home/jon/git/hw3-jcb/hw3-jcb/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {

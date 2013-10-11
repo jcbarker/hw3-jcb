@@ -45,6 +45,7 @@
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Results</type>
         </outputs>
         <languagesSupported/>
       </capability>

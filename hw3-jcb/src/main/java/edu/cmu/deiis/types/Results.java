@@ -7,11 +7,14 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
+import org.apache.uima.jcas.cas.FSArray;
+
+
 import org.apache.uima.jcas.cas.FSList;
 
 
 /** This holds the results of an evalution of a question's answers.
- * Updated by JCasGen Mon Oct 07 23:23:12 EDT 2013
+ * Updated by JCasGen Tue Oct 08 00:08:33 EDT 2013
  * XML source: /home/jon/git/hw3-jcb/hw3-jcb/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Results extends Annotation {
@@ -85,17 +88,33 @@ public class Results extends Annotation {
 
   /** getter for answerScores - gets The answer scores.
    * @generated */
-  public FSList getAnswerScores() {
+  public FSArray getAnswerScores() {
     if (Results_Type.featOkTst && ((Results_Type)jcasType).casFeat_answerScores == null)
       jcasType.jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
-    return (FSList)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores)));}
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores)));}
     
   /** setter for answerScores - sets The answer scores. 
    * @generated */
-  public void setAnswerScores(FSList v) {
+  public void setAnswerScores(FSArray v) {
     if (Results_Type.featOkTst && ((Results_Type)jcasType).casFeat_answerScores == null)
       jcasType.jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
     jcasType.ll_cas.ll_setRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for answerScores - gets an indexed value - The answer scores.
+   * @generated */
+  public AnswerScore getAnswerScores(int i) {
+    if (Results_Type.featOkTst && ((Results_Type)jcasType).casFeat_answerScores == null)
+      jcasType.jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores), i);
+    return (AnswerScore)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores), i)));}
+
+  /** indexed setter for answerScores - sets an indexed value - The answer scores.
+   * @generated */
+  public void setAnswerScores(int i, AnswerScore v) { 
+    if (Results_Type.featOkTst && ((Results_Type)jcasType).casFeat_answerScores == null)
+      jcasType.jcas.throwFeatMissing("answerScores", "edu.cmu.deiis.types.Results");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Results_Type)jcasType).casFeatCode_answerScores), i, jcasType.ll_cas.ll_getFSRef(v));}
    
     
   //*--------------*
