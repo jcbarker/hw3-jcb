@@ -3,24 +3,24 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
-    <delegateAnalysisEngine key="TestElementAnnotator">
-      <import name="descriptors.TestElementAnnotator"/>
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="TokenAnnotator">
-      <import name="descriptors.TokenAnnotator"/>
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="NGramAnnotator">
-      <import name="descriptors.NGramAnnotator"/>
+    <delegateAnalysisEngine key="Evaluation">
+      <import name="descriptors.Evaluation"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="AnswerScorer">
       <import name="descriptors.AnswerScorer"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="Evaluation">
-      <import name="descriptors.Evaluation"/>
+    <delegateAnalysisEngine key="TokenAnnotator">
+      <import name="descriptors.TokenAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TestElementAnnotator">
+      <import name="descriptors.TestElementAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NGramAnnotator">
+      <import name="descriptors.NGramAnnotator"/>
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
-    <name>hw2-jcb-aae</name>
+    <name>hw3-jcb-aae</name>
     <description>This is the main workflow for the simple QA task.</description>
     <version>1.0</version>
     <vendor/>

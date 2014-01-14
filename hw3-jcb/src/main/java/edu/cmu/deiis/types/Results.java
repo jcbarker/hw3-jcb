@@ -14,8 +14,8 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** This holds the results of an evalution of a question's answers.
- * Updated by JCasGen Tue Oct 08 00:08:33 EDT 2013
- * XML source: /home/jon/git/hw3-jcb/hw3-jcb/src/main/resources/descriptors/deiis_types.xml
+ * Updated by JCasGen Tue Jan 14 10:29:35 EST 2014
+ * XML source: /home/jon/git/hw3-jcb/hw3-jcb/src/main/resources/descriptors/hw3-jcb-aae.xml
  * @generated */
 public class Results extends Annotation {
   /** @generated
